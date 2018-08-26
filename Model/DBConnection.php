@@ -58,5 +58,16 @@ class DBConnection
    			echo "Thêm mới thất bại! Error: " . $sql . "<br>" . $this->conn->error;
 		}
 	}
+
+	public function deleteAdmin($admin_id)
+	{
+		$sql= "delete from admin where admin_id = ".$admin_id;
+
+		if($this->conn->query($sql)){
+			echo "Đã xóa thành công";
+		}else{
+			echo "Có lỗi khi xóa! Error :".$sql. "<br/>" .$this->error;
+		}
+	}
 }
 ?>
